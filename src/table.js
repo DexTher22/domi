@@ -1,3 +1,6 @@
+const tbody = document.querySelector("tbody")
+
+
 employees = [
     { id: 1, name: 'Erős István', city: 'Szeged', salary: '395'},
     { id: 2, name: 'Tar Ferenc', city: 'Pécs', salary: '392'},
@@ -5,3 +8,21 @@ employees = [
     { id: 4, name: 'Rendes Irén', city: 'Pécs', salary: '393'},
     { id: 5, name: 'Fel Áron', city: 'Szeged', salary: '397'}
 ]
+
+var rows = ""
+employees.forEach(emp => {
+    console.log(emp.name)
+
+    let row = `
+    <tr>
+        <td>${emp.id}</td>
+        <td>${emp.name}</td>
+        <td>${emp.city}</td>
+        <td>${emp.salary}</td>
+    </tr>
+    `
+    rows += row
+})
+
+console.log(rows)
+tbody.innerHTML = rows
